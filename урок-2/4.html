@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    const numb1 = +prompt('Введите первое число');
+    const numb2 = +prompt('Введите второе число');
+
+    let result = null;
+
+    /*
+     * Складываем числа.
+     *
+     * @param {number} sum1 - первое чмсло
+     * @param {number} sum2 - второе число
+     * @returns {number} result - возвращаем итоговое значение.
+     */
+
+    function addition(sum1, sum2) {
+      result = sum1 + sum2;
+      return result;
+    };
+    document.writeln(addition(numb1, numb2));
+    /*
+     * Вычитаем числа.
+     *
+     * @param {number} sum1 - первое чмсло
+     * @param {number} sum2 - второе число
+     * @returns {number} result - возвращаем итоговое значение.
+     */
+    function subtraction(sum1, sum2) {
+      if (sum1 > sum2) {
+        result = sum1 - sum2;
+        return result;
+      } else if (sum1 < sum2) {
+        result = sum2 - sum1;
+        return result;
+      } else if (sum1 === sum2) {
+        return 0;
+      }
+    };
+    document.writeln(subtraction(numb1, numb2));
+
+    /*
+     * Умножаем числа.
+     *
+     * @param {number} sum1 - первое чмсло
+     * @param {number} sum2 - второе число
+     * @returns {number} result - возвращаем итоговое значение.
+     */
+
+    function multiplication(sum1, sum2) {
+      result = sum1 * sum2;
+      return result;
+    };
+    document.writeln(multiplication(numb1, numb2));
+
+    /*
+     * Делим числа.
+     *
+     * @param {number} sum1 - первое чмсло
+     * @param {number} sum2 - второе число
+     * @returns {number} result - возвращаем итоговое значение.
+     */
+
+    function division(sum1, sum2) {
+      result = sum1 / sum2;
+      return result;
+    };
+    document.writeln(division(numb1, numb2))
+
+  </script>
+</body>
+
+</html>
